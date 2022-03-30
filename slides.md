@@ -40,6 +40,26 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
+# My mojo
+
+https://www.linkedin.com/pulse/i-have-right-do-research-software-engineering-hafedh-mili/
+
+> Parnas noted "I would never have realized the nature of the problem, unless I had been working on that project, reviewing development documents, and sitting at that lunch table". Well, minimally, I need to be able to understand the conversation at that lunch table!
+
+So here is a practical definition of what "understanding the conversation" means in this context: **You have no right to do software engineering research unless you have the development skills/vocabulary of your graduating bachelor students.**
+
+## That is why: I enjoy building real software, doing consultancy, ...
+
+---
+layout: center
+class: text-center
+---
+
+# The project: correct exam
+
+
+---
+
 # Highly inspired by GradeScope Solution
 
 > Gradescope grading software allows students to receive faster and more detailed feedback on their work, and allows instructors to see detailed assignment and question analytics. It is an easy way to take submissions digitally in order to preserve the original work and allow for quick and easy viewing from anywhere.
@@ -55,10 +75,12 @@ This is a left-bottom aligned footer
 # Why building that piece of software ?
 
 - Enable to correct exams during meetings 😀
+- Save $5 per student copy
 - Try to initiate a project with Younup to see how we could engage efficiently software engineer available for some days
 - Create an open source implementation of real software with complex architecture to have a case study for
   - experiments in software engineering research
   - explaining modern software architecture to students
+- Try to keep the right (in my vision) to do research in software engineering
 
 ---
 
