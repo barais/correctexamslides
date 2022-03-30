@@ -1,25 +1,17 @@
 ---
-# try also 'default' to start simple
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
 background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
+class: text-center
 download: true
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: false
-# some information about the slides, markdown enabled
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  ## Official slides for CorrectExam
 
-  Learn more at [Sli.dev](https://sli.dev)
-# persist drawings in exports and build
+  Learn more at [corrigeExamFront](https://olivier.barais.fr/corrigeExamFront/)
 drawings:
   persist: false
+title: Correct Exam
 ---
 
 # Correct Exam
@@ -82,7 +74,7 @@ This is a left-bottom aligned footer
 - [**Docker**](https://www.docker.com/) and [K8S](https://kubernetes.io) to deploy the back and the monitoring layer
 - Front is hosted in a CDN to follow the [JamStack](https://jamstack.org/) architecture (currently github page)
 - CI/CD using [**github action**](https://github.com/features/actions), [**dockerhub webhook**](https://docs.docker.com/docker-hub/webhooks/), and [**gowebhook**](https://github.com/adnanh/webhook)
-
+- Pluggable architecture based on micro-services to integrate question type automatic correction (let developper use their own programming language to provides solutions that automatically correct some questions)
 
 ---
 
@@ -111,7 +103,7 @@ package "Front" {
 }
 
 
-cloud {
+package "Back" {
   [Back (Quarkus.io)]
 }
 
@@ -350,6 +342,26 @@ In the service
     return this._dispatch('imageProcessing', image);
   }
 ```
+
+---
+
+## OpenCV architecture
+
+Alignement algo
+- Marker detection
+  - circle detection
+  - verify if the cicle is filled
+  - Check if we find 4 markers on the orginal exam and in the scan copy
+  - If YES
+  
+```ts
+  let h = cv.findHomography(dstTri, srcTri, cv.RANSAC);
+  cv.warpPerspective(srcMat2, dst, h, dsize);
+```
+
+  - ELSE find markers based on AKAZE (longer process)
+
+
 
 ---
 layout: center
