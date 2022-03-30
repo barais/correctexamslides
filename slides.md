@@ -48,7 +48,7 @@ https://www.linkedin.com/pulse/i-have-right-do-research-software-engineering-haf
 
 So here is a practical definition of what "understanding the conversation" means in this context: **You have no right to do software engineering research unless you have the development skills/vocabulary of your graduating bachelor students.**
 
-## That is why: I enjoy building real software, doing consultancy, ...
+## That is why: I enjoy building real software, doing consultancy, working with students, ...
 
 ---
 layout: center
