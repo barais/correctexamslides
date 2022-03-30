@@ -108,8 +108,6 @@ This is a left-bottom aligned footer
 
 # Diagrams
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
 <div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
 <div>
 
