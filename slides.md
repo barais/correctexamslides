@@ -46,7 +46,7 @@ https://www.linkedin.com/pulse/i-have-right-do-research-software-engineering-haf
 
 > Parnas noted "I would never have realized the nature of the problem, unless I had been working on that project, reviewing development documents, and sitting at that lunch table". Well, minimally, I need to be able to understand the conversation at that lunch table!
 
-So here is a practical definition of what "understanding the conversation" means in this context: **You have no right to do software engineering research unless you have the development skills/vocabulary of your graduating bachelor students.**
+So here is a practical definition of what "understanding the conversation" means in this context: **You have no credibility to do software engineering research unless you have  at least the development skills/vocabulary of your graduating bachelor students.**
 
 ## That is why: I enjoy building real software, doing consultancy, working with students, ...
 
@@ -80,7 +80,7 @@ This is a left-bottom aligned footer
 - Create an open source implementation of real software with complex architecture to have a case study for
   - experiments in software engineering research
   - explaining modern software architecture to students
-- Try to keep the right (in my vision) to do research in software engineering
+- Try to keep the credibility (in my vision) to do research in software engineering
 
 ---
 
@@ -377,7 +377,7 @@ Alignement algo
   cv.warpPerspective(srcMat2, dst, h, dsize);
 ```
 
-  - ELSE find markers based on AKAZE (longer process), filter found marker with custom heuristics
+  - ELSE find markers based on AKAZE (longer process), filter found marker with custom heuristic
 
 ```ts
   let h = cv.findHomography(dstTri, srcTri, cv.RANSAC);
