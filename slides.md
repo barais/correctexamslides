@@ -62,7 +62,7 @@ This is a left-bottom aligned footer
 
 # Why building that piece of software ?
 
-- Enable to correct exam during meetings 😀
+- Enable to correct exams during meetings 😀
 - Try to initiate a project with Younup to see how we could engage efficiently software engineer available for some days
 - Create an open source implementation of real software with complex architecture to have a case study for
   - experiments in software engineering research
@@ -79,8 +79,8 @@ This is a left-bottom aligned footer
   - [**opencv**](https://opencv.org/) in wasm within a web worker to analyse the scan
   - [**tensorflow JS**](https://www.tensorflow.org/js) with the browser for digit and letter recognition
   - ...
-- [**Docker**](https://www.docker.com/) and K8S to deploy the back and the monitoring layer
-- Front is hosted in a CDN to follow the [JamStack](https://jamstack.org/) architecture
+- [**Docker**](https://www.docker.com/) and [K8S](https://kubernetes.io) to deploy the back and the monitoring layer
+- Front is hosted in a CDN to follow the [JamStack](https://jamstack.org/) architecture (currently github page)
 - CI/CD using [**github action**](https://github.com/features/actions), [**dockerhub webhook**](https://docs.docker.com/docker-hub/webhooks/), and [**gowebhook**](https://github.com/adnanh/webhook)
 
 
@@ -268,7 +268,88 @@ cloud {
 - [x] Comments
 - [x] opencv path in the deployed version
 
+---
 
+# Demo and code overview
+
+- [demo](https://olivier.barais.fr/corrigeExamFront/)
+- [repo back](https://github.com/barais/corrigeExamBack)
+- [repo front](https://github.com/barais/corrigeExamFront)
+
+
+---
+
+# A simple RPC to manage the communication between openCV worker and Angular
+
+In the worker
+
+```ts
+addEventListener('message', e => {
+  switch (e.data.msg) {
+    case 'hello': {
+      const response = `worker response to ${e.data.msg}`;
+      postMessage({ msg: response, uid: e.data.uid });
+      break;
+    }
+    ...
+```
+
+---
+
+In the service
+
+```ts
+ ready!: Promise<void>;
+  subjects = new Map<string, Subject<any>>();
+  constructor() {
+    if (typeof Worker !== 'undefined') {
+      // Create a new
+      this.worker = worker;
+      this.worker.onmessage = ({ data }) => {
+        if (this.subjects.has(data.uid)) {
+          this.subjects.get(data.uid)?.next(data.payload);
+          this.subjects.get(data.uid)?.complete();
+        }
+      };
+      this.worker.onerror = e => {
+        if (this.subjects.has((e as any).uid)) {
+          this.subjects.get((e as any).uid)?.error(e);
+        }
+      };
+      const p = new Subject();
+      this.subjects.set('0', p); // Ask to load opencv wasm to the worker
+      this.ready = new Promise((res, rej) => {
+        this.subjects
+          .get('0')?.asObservable().subscribe(() => {res();},() => rej());
+      });
+      this.worker.postMessage({ msg: 'load', uid: '0' });
+    } }
+```
+
+---
+
+In the service
+
+```ts
+   private _dispatch<T>(msg1: any, pay: any): Observable<T> {
+    const uuid1 = uuid(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+    this.ready.then(() => {
+      this.worker.postMessage({ msg: msg1, uid: uuid1, payload: pay });
+    });
+    const p = new Subject<T>();
+    this.subjects.set(uuid1, p);
+    this.ready = new Promise((res, rej) => {
+      this.subjects.get(uuid1)?.asObservable().subscribe(() => 
+          {res();},
+          () => rej()
+        );
+    });
+    return p.asObservable();
+  }
+  public imageProcessing(image: ImageData): Observable<ImageData> {
+    return this._dispatch('imageProcessing', image);
+  }
+```
 
 ---
 layout: center
