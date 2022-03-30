@@ -369,7 +369,7 @@ In the service
 Alignement algo
 - Marker detection
   - circle detection
-  - verify if the cicle is filled
+  - verify if the circle is filled
   - If we find 4 markers on the orginal exam and in the scan copy
   
 ```ts
