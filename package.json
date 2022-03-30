@@ -3,7 +3,6 @@
   "scripts": {
     "build": "slidev build",
     "buildgithub": "slidev build --base /correctexamslides && rm -rf docs && mv dist docs && git add docs/** && git commit . -m 'update' && git push",
-
     "dev": "slidev --open",
     "export": "slidev export"
   },
@@ -12,5 +11,8 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
-  "name": "correctexam"
+  "name": "correctexam",
+  "devDependencies": {
+    "playwright-chromium": "^1.20.1"
+  }
 }
