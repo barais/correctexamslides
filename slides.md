@@ -64,7 +64,7 @@ This is a left-bottom aligned footer
 
 # The technical architecture
 
-- [**Quarkus**](https://quarkus.io/) for the back (Java + native compiltation through GraalVM)
+- [**Quarkus**](https://quarkus.io/) for the back (Java + native compilation through GraalVM)
 - [**Angular 13.3**](https://angular.io/) for the front
   - [**pdf.js**](https://mozilla.github.io/pdf.js/) to play with pdf (exam, scan exam, feedback for students)
   - [**fabric.js**](http://fabricjs.com/) to draw on top of a pdf
@@ -168,7 +168,6 @@ cloud {
 > Manual alignement of the API evolution 😀 (@Djamel)
 
 ---
-
 
 # Where we are
 
@@ -351,17 +350,27 @@ Alignement algo
 - Marker detection
   - circle detection
   - verify if the cicle is filled
-  - Check if we find 4 markers on the orginal exam and in the scan copy
-  - If YES
+  - If we find 4 markers on the orginal exam and in the scan copy
   
 ```ts
   let h = cv.findHomography(dstTri, srcTri, cv.RANSAC);
   cv.warpPerspective(srcMat2, dst, h, dsize);
 ```
 
-  - ELSE find markers based on AKAZE (longer process)
+  - ELSE find markers based on AKAZE (longer process), filter found marker with custom heuristics
 
+```ts
+  let h = cv.findHomography(dstTri, srcTri, cv.RANSAC);
+  cv.warpPerspective(srcMat2, dst, h, dsize);
+```
 
+---
+
+## Plug your own microservice to correct a custom question type
+
+- Two kinds: *Preprocessor*, *Automatic correction*
+
+correct(qs: Questions)
 
 ---
 layout: center
