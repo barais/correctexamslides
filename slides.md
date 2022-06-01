@@ -76,10 +76,9 @@ This is a left-bottom aligned footer
 
 - Enable to correct exams during meetings 😀
 - Save $5 per student copy
-- Try to initiate a project with Younup to see how we could engage efficiently software engineer available for some days
 - Create an open source implementation of real software with complex architecture to have a case study for
   - experiments in software engineering research
-  - explaining modern software architecture to students
+   - explaining modern software architecture to students
 - Try to keep the credibility (in my vision) to do research in software engineering
 
 ---
@@ -189,103 +188,11 @@ cloud {
 
 ---
 
-# Where we are
-
-## Done
-
-- [x] Vue home
-- [x] Donnée factice
-- [x] Afficher vraie liste de cours (requête au back)
-- [x] Masquer vue entité pour user
-- [x] Premère page
-- [x] Composant Cours viusualisation 
-- [x] Composant Insérer groupe étudiant
-- [x] Composant supprimer UE
-- [x] Voir groupe étudiant pour une UE incluant VIDER LISTE ETUDIANT pour cet UE
-- [x] Refactoring module
-- [x] Composant Créer exam
-- [x] Composant Exam (Supprimer Exam, Lien Editer Zone, Charger scanétudiant, Lancer mapping nom étudiant, Corriger)
-
----
-
-## Done
-
-- [x] Composant ExamEditerzone
-  - [x] Créer type de rectangle fabric
-- [x] Vérifier compilation native
-- [x] Vue question
-- [x] Mise en place CI
-- [x] Mise en place CD (front)
-- [x] Vue home admin
-- [x] Bouton retour dans la partie annoter document
-- [x] Bouton charger scan
-- [x] Bouton associé copies
-- [x] Bouton Corriger
-- [x] Intégration opencv
-- [x] Test intégration opencv
-- [x] Mise en place CD (back)
-- [x] Alignement pdf (opencv)
-
----
-
-## Ongoing
-
-- [ ] Backup alignement pdf
-- [ ] Découpe numéro (bounding box, opencv)
-- [ ] Association étudiants (angular)
-- [ ] Icone verte dans le workflow de correction
-
----
-
-## TODO
-
-- [ ] TensorFlow.js, reconnaissance chiffre (match étudiant)
-- [ ] Bouton voir et exporter résultat
-- [ ] Bouton envoyer résultats aux étudiants
-- [ ] Bouton voir copie corrigée
-- [ ] Bouton associé copies
-- [ ] Bouton Corriger
-- [ ] Bouton voir et exporter résultat
-- [ ] Bouton envoyer résultats aux étudiants
-- [ ] Bouton voir copie corrigée
-- [ ] Traduction title route
-- [ ] Traduction composant module scanexam
-- [ ] Retravailler traduction
-- [ ] Mettre à jour la vue du numéro de question quand mise à jour dans le menu propriété. 
-
----
-
-## TO Think
-
-- [ ] Réfléchir barème positif ou négatif
-- [ ] Réfléchir annotation automatique par question
-- [ ] Module alignement image
-- [ ] Module reconnaissance nom
-
----
-
-## To fix
-- [ ] Configuration email back
-- [ ] Remove ununsed dependecies (crop ngx, opencvngx)
-
-
-## Fixed
-
-- [x] Exam
-- [x] Question
-- [x] ExamSheet
-- [x] Final Result
-- [x] Student Response
-- [x] Comments
-- [x] opencv path in the deployed version
-
----
-
 # Demo and code overview
 
-- [demo](https://olivier.barais.fr/corrigeExamFront/)
-- [repo back](https://github.com/barais/corrigeExamBack)
-- [repo front](https://github.com/barais/corrigeExamFront)
+- [demo](https://correctexam.github.io/)
+- [repo back](https://github.com/correctexam/corrigeExamBack)
+- [repo front](https://github.com/correctexam/corrigeExamFront)
 
 
 ---
