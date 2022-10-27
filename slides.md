@@ -86,7 +86,7 @@ This is a left-bottom aligned footer
 # The technical architecture
 
 - [**Quarkus**](https://quarkus.io/) for the back (Java + native compilation through GraalVM)
-- [**Angular 13.3**](https://angular.io/) for the front
+- [**Angular 14**](https://angular.io/) for the front
   - [**pdf.js**](https://mozilla.github.io/pdf.js/) to play with pdf (exam, scan exam, feedback for students)
   - [**fabric.js**](http://fabricjs.com/) to draw on top of a pdf
   - [**opencv**](https://opencv.org/) in wasm within a web worker to analyse the scan
