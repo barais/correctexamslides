@@ -212,16 +212,16 @@ cloud {
 
 # Project history
 
-- March 2022: First discussion
-- April 2022: 2 first exams in test mode @UnivRennes
-- September 2022: new features (MCQs, translation, etc.), test extensions (IUT Toulouse, Université de Nice, INSA Rennes, etc.). 
-- Spring 2023: Improvements based on user feedback (85 PR between January and May 2023)
-- Summer 2023: Batch correction, performance enhancement, identity federation integration, support for standalone mode to correct directly from your PC without data sharing)
-- Autumn 2023: Annotated pdf export, Performance improvement (Exam support for over 5000 copies) 
-- Christmas 2023: [New scoring mechanism (hybrid)](https://github.com/correctexam/corrigeExamFront/issues/427), [hackmd](https://correctexam.github.io/hackmd.io2pdf/) and [asciidoc templates](https://correctexam.github.io/asciidoclive2pdf/), ...
-- April 2024: New zen mode for correction, random correction, latex template evolution, improvements based on feedback from users...
-- 377 + 131 PR since the start of the project
-- > 250 corrected exams (120 users growing since September 2023) 👏👏👏👏
+- **March 2022**: First discussion
+- **April 2022**: 2 first exams in test mode @UnivRennes
+- **September 2022**: new features (MCQs, translation, etc.), test extensions (IUT Toulouse, Université de Nice, INSA Rennes, etc.). 
+- **Spring 2023**: Improvements based on user feedback (85 PR between January and May 2023)
+- **Summer 2023**: Batch correction, performance enhancement, identity federation integration, support for standalone mode to correct directly from your PC without data sharing)
+- **Autumn 2023**: Annotated pdf export, Performance improvement (Exam support for over 5000 copies) 
+- **Christmas 2023**: [New scoring mechanism (hybrid)](https://github.com/correctexam/corrigeExamFront/issues/427), [hackmd](https://correctexam.github.io/hackmd.io2pdf/) and [asciidoc templates](https://correctexam.github.io/asciidoclive2pdf/), ...
+- **April 2024**: New zen mode for correction, random correction, latex template evolution, improvements based on feedback from users...
+- **377 + 131 PR** since the start of the project
+- > **250** corrected exams (**120** users growing since September 2023) 👏👏👏👏
 
 
 ---
@@ -257,7 +257,7 @@ cloud {
 
 # OpenHub identity card
 
-- [openhub](https://openhub.net/p/correctexam)
+- [OpenHub](https://openhub.net/p/correctexam)
 
 
 ---
@@ -304,7 +304,7 @@ class: text-center
   - https://github.com/correctexam/corrigeExamFront/issues?q=is%3Aopen+is%3Aissue+milestone%3AV1.3
 - Publicize the project / Attract users to improve the tool
 - Understand how other partners can join the adventure / Attract contributors
-- V1.5 ✅
+- V1.5
   - Support Jupyter notebook correction
 
 ---
