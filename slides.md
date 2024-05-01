@@ -306,6 +306,15 @@ class: text-center
   - Support Jupyter notebook correction
 
 ---
+# Where are we 
+
+- Become usable ;)
+- An ergonomist will continue to work this summer
+- Nantes AND Paris are on board ;)
+- Intuidoc will help
+- Should be under the Esup-portal banner
+- ...
+---
 # Perspectives
 
 - As a research project: 
