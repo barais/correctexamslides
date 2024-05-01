@@ -55,14 +55,14 @@ layout: center
 class: text-center
 ---
 
-# The project: correct exam
+# The project: CorrectExam
 
 
 ---
 
-## The need
+## Requirements
 
-Encourage students to consult corrected copies more often to learn from their mistakes
+Encourage students to look at corrected copies more often to learn from their mistakes
 
 - *Fairer* correction
   - a statistical view of results
@@ -218,8 +218,10 @@ cloud {
 - Spring 2023: Improvements based on user feedback (85 PR between January and May 2023)
 - Summer 2023: Batch correction, performance enhancement, identity federation integration, support for standalone mode to correct directly from your PC without data sharing)
 - Autumn 2023: Annotated pdf export, Performance improvement (Exam support for over 5000 copies) 
+- Christmas 2023: [New scoring mechanism (hybrid)](https://github.com/correctexam/corrigeExamFront/issues/427), [hackmd](https://correctexam.github.io/hackmd.io2pdf/) and [asciidoc templates](https://correctexam.github.io/asciidoclive2pdf/), ...
+- April 2024: New zen mode for correction, random correction, latex template evolution, improvements based on feedback from users...
 - 377 + 131 PR since the start of the project
-- > 250 corrected exams (120 users growing since September 2023)
+- > 250 corrected exams (120 users growing since September 2023) 👏👏👏👏
 
 
 ---
