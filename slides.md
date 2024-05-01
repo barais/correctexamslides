@@ -60,6 +60,26 @@ class: text-center
 
 ---
 
+## The need
+
+Encourage students to consult corrected copies more often to learn from their mistakes
+
+- *Fairer* correction
+  - a statistical view of results
+  - anonymous, random correction...
+  - ability to modify the scale on the fly
+
+- Correct more effectively
+  - simultaneously
+  - question by question / copy by copy
+  - batch
+  - automated correction for MCQs
+  - on tablet or computer
+  - avoiding "all MCQs
+
+
+---
+
 # Highly inspired by GradeScope Solution
 
 > Gradescope grading software allows students to receive faster and more detailed feedback on their work, and allows instructors to see detailed assignment and question analytics. It is an easy way to take submissions digitally in order to preserve the original work and allow for quick and easy viewing from anywhere.
@@ -74,14 +94,34 @@ This is a left-bottom aligned footer
 
 # Why building that piece of software ?
 
-- Enable to correct exams during meetings 😀
+- Insufficient **feedback** from evaluations to students
+- **ChatGPT** & consorts but also **Github Copilot**, ... are here
+  - They "trivialize" a lot of our homework, exams, projects, TPs, TDs...
+  - => We need to evolve the way we teach / what we teach / what we assess / how we assess it ... Paper/pencil still has a future for assessment
+- Allow exams to be corrected during meetings 😀
 - Save $5 per student copy
-- Create an open source implementation of real software with complex architecture to have a case study for
-  - experiments in software engineering research
-   - explaining modern software architecture to students
-- Try to keep the credibility (in my vision) to do research in software engineering
+- Create an open source implementation 
+  - to master privacy/teaching analytics issues
+  - of real software with a complex architecture to provide a case study for :
+    - explain modern software architecture to students
+    - experience in software engineering research
+- Trying to keep credibility (in my vision) to do software engineering research
 
 ---
+layout: center
+class: text-center
+---
+
+# Architectural choices / Functionality
+
+-  Deport everything that requires computing power to the browser:
+  - Image processing
+  - Machine learning
+  - Cache
+  - Parallelization
+---
+
+
 
 # The technical architecture
 
@@ -93,9 +133,9 @@ This is a left-bottom aligned footer
   - [**tensorflow JS**](https://www.tensorflow.org/js) with the browser for digit and letter recognition
   - ...
 - [**Docker**](https://www.docker.com/) and [K8S](https://kubernetes.io) to deploy the back and the monitoring layer
-- Front is hosted in a CDN to follow the [JamStack](https://jamstack.org/) architecture (currently github page)
+- Front is hosted in a CDN to follow the [JamStack](https://jamstack.org/) architecture (currently github page, netifly and cloudfare)
 - CI/CD using [**github action**](https://github.com/features/actions), [**dockerhub webhook**](https://docs.docker.com/docker-hub/webhooks/), and [**gowebhook**](https://github.com/adnanh/webhook)
-- Pluggable architecture based on micro-services to integrate question type automatic correction (let developper use their own programming language to provides solutions that automatically correct some questions)
+- [jest](https://jestjs.io/) and [cypress](https://www.cypress.io/) for unit and system testing
 
 ---
 
@@ -166,34 +206,56 @@ cloud {
 </div>
 </div>
 
----
-
-## Business model
-
-![](/model.png)
 
 
 ---
 
-## JHipster to generate the application skeleton
+# Project history
 
-> JHipster is a development platform to quickly generate, develop, & deploy modern web applications & microservice architectures.
+- March 2022: First discussion
+- April 2022: 2 first exams in test mode @UnivRennes
+- September 2022: new features (MCQs, translation, etc.), test extensions (IUT Toulouse, Université de Nice, INSA Rennes, etc.). 
+- Spring 2023: Improvements based on user feedback (85 PR between January and May 2023)
+- Summer 2023: Batch correction, performance enhancement, identity federation integration, support for standalone mode to correct directly from your PC without data sharing)
+- Autumn 2023: Annotated pdf export, Performance improvement (Exam support for over 5000 copies) 
+- 377 + 131 PR since the start of the project
+- > 250 corrected exams (120 users growing since September 2023)
 
-
-
-- jhipster 7.7.0 for the front
-- jhisper 6.10.15
-
-> Manual alignement of the API evolution 😀 (@Djamel)
 
 ---
 
-# Demo and code overview
+# Features 1/2
 
-- [demo](https://correctexam.github.io/)
-- [repo back](https://github.com/correctexam/corrigeExamBack)
-- [repo front](https://github.com/correctexam/corrigeExamFront)
+- Free-format exam template (word, libroffice, latex, asciidoc, markdown, ...) PDF input only required
+- Import and manipulate scans in pdf format (page order, rotation, deletion)
+- Copy sheet alignment (to correct scan defects)
+- Name recognition on copies (to assign copies to students)
+- Tag best/least correct answers (to generate a standard answer sheet on the fly)
+- Support for direct rating, positive, negative or **hybrid**
+- Quick comparison of answers with the same comments / same question
+- MCQ support (not as good as AMC: Auto multiple Choice https://www.auto-multiple-choice.net/)
+- Batch correction (to score a set of similar answers in a single step)
+- Annotate copies with a stylus during correction
+- Statistics by exam
 
+---
+
+# Features 2/2
+
+- Import/Export modules with or without student data
+- Import/Export comments
+- Email to students with their copy in the form of an annotated pdf and/or with a link for consultation on the platform
+- Export results in Excel format (to be sent to school)
+- Support for University identity federations
+- Zen mode
+....
+
+
+---
+
+# OpenHub identity card
+
+- [openhub](https://openhub.net/p/correctexam)
 
 
 ---
@@ -201,6 +263,62 @@ layout: center
 class: text-center
 ---
 
+# Feedback/Community structuring
+
+
+---
+
+# Some feedbacks
+
+- 171 issues by twenty users
+  - https://github.com/correctexam/corrigeExamFront/issues/397
+> "I've just finished correcting my first exam with CorrectExam, and I'm pleasantly surprised by how easy it is to use, it's very functional, I couldn't say if I'm saving time, but the feedback to the student seems very important to me, and that's what I prefer. And I can see that features are being added as we go along (text comments with text box!)."  
+Julien Geandrot, 19/11/2023
+- Many emails ~300 emails
+- Compliance for RGPD, Student Intellectual Property, ... (discussion with University lawyers).
+- Setting up a mailing list, matrix channel, an operational committee, etc.
+- GitHub as a collaboration platform
+
+
+---
+layout: center
+class: text-center
+---
+# Roadmap
+
+---
+
+# Roadmap
+
+- Training of pedagogical engineers at the University of Rennes ✅
+- Deployment of version 1.1 on an infrastructure managed by the DSI at the Université de Rennes ✅
+- Beta testing with other curious users 
+- Accessibility analysis
+- V1.2 A number of identified tasks ✅
+  - https://github.com/correctexam/corrigeExamFront/issues?q=is%3Aopen+is%3Aissue+milestone%3AV1.2
+- V1.3 ✅
+  - https://github.com/correctexam/corrigeExamFront/issues?q=is%3Aopen+is%3Aissue+milestone%3AV1.3
+- V1.4 ✅
+  - https://github.com/correctexam/corrigeExamFront/issues?q=is%3Aopen+is%3Aissue+milestone%3AV1.3
+- Publicize the project / Attract users to improve the tool
+- Understand how other partners can join the adventure / Attract contributors
+- V1.5 ✅
+  - Support Jupyter notebook correction
+
+---
+# Perspectives
+
+- As a research project: 
+  - two DSLs to implements: 
+    - MCQ scale, DMOS (Intuidoc)
+  - Variability analysis
+
+---
+
 # Learn More
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+
+
+- [Documentations](https://correctexam.readthedocs.io/) 
+- [GitHub](github.com/correctexam) 
+- [Apps](https://correctexam.pages.dev/)
