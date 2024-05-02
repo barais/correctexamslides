@@ -107,6 +107,59 @@ This is a left-bottom aligned footer
     - experience in software engineering research
 - Trying to keep credibility (in my vision) to do software engineering research
 
+
+---
+
+# Project history
+
+- **March 2022**: First discussion
+- **April 2022**: 2 first exams in test mode @UnivRennes
+- **September 2022**: new features (MCQs, translation, etc.), test extensions (IUT Toulouse, Université de Nice, INSA Rennes, etc.). 
+- **Spring 2023**: Improvements based on user feedback (85 PR between January and May 2023)
+- **Summer 2023**: Batch correction, performance enhancement, identity federation integration, support for standalone mode to correct directly from your PC without data sharing)
+- **Autumn 2023**: Annotated pdf export, Performance improvement (Exam support for over 5000 copies) 
+- **Christmas 2023**: [New scoring mechanism (hybrid)](https://github.com/correctexam/corrigeExamFront/issues/427), [hackmd](https://correctexam.github.io/hackmd.io2pdf/) and [asciidoc templates](https://correctexam.github.io/asciidoclive2pdf/), ...
+- **April 2024**: New zen mode for correction, random correction, latex template evolution, improvements based on feedback from users...
+- **377 + 131 PR** since the start of the project
+- > **250** corrected exams (**120** users growing since September 2023) 👏👏👏👏
+
+---
+
+# Features 1/2
+
+- Free-format exam template (word, libroffice, latex, asciidoc, markdown, ...) PDF input only required
+- Import and manipulate scans in pdf format (page order, rotation, deletion)
+- Copy sheet alignment (to correct scan defects)
+- Name recognition on copies (to assign copies to students)
+- Tag best/least correct answers (to generate a standard answer sheet on the fly)
+- Support for direct rating, positive, negative or **hybrid**
+- Quick comparison of answers with the same comments / same question
+- MCQ support (not as good as AMC: Auto multiple Choice https://www.auto-multiple-choice.net/)
+- Batch correction (to score a set of similar answers in a single step)
+- Annotate copies with a stylus during correction
+- Statistics by exam
+
+---
+
+# Features 2/2
+
+- Import/Export modules with or without student data
+- Import/Export comments
+- Email to students with their copy in the form of an annotated pdf and/or with a link for consultation on the platform
+- Export results in Excel format (to be sent to school)
+- Support for University identity federations
+- Zen mode
+....
+
+
+---
+
+# OpenHub identity card
+
+- [OpenHub](https://openhub.net/p/correctexam)
+
+
+
 ---
 layout: center
 class: text-center
@@ -208,56 +261,7 @@ cloud {
 
 
 
----
 
-# Project history
-
-- **March 2022**: First discussion
-- **April 2022**: 2 first exams in test mode @UnivRennes
-- **September 2022**: new features (MCQs, translation, etc.), test extensions (IUT Toulouse, Université de Nice, INSA Rennes, etc.). 
-- **Spring 2023**: Improvements based on user feedback (85 PR between January and May 2023)
-- **Summer 2023**: Batch correction, performance enhancement, identity federation integration, support for standalone mode to correct directly from your PC without data sharing)
-- **Autumn 2023**: Annotated pdf export, Performance improvement (Exam support for over 5000 copies) 
-- **Christmas 2023**: [New scoring mechanism (hybrid)](https://github.com/correctexam/corrigeExamFront/issues/427), [hackmd](https://correctexam.github.io/hackmd.io2pdf/) and [asciidoc templates](https://correctexam.github.io/asciidoclive2pdf/), ...
-- **April 2024**: New zen mode for correction, random correction, latex template evolution, improvements based on feedback from users...
-- **377 + 131 PR** since the start of the project
-- > **250** corrected exams (**120** users growing since September 2023) 👏👏👏👏
-
-
----
-
-# Features 1/2
-
-- Free-format exam template (word, libroffice, latex, asciidoc, markdown, ...) PDF input only required
-- Import and manipulate scans in pdf format (page order, rotation, deletion)
-- Copy sheet alignment (to correct scan defects)
-- Name recognition on copies (to assign copies to students)
-- Tag best/least correct answers (to generate a standard answer sheet on the fly)
-- Support for direct rating, positive, negative or **hybrid**
-- Quick comparison of answers with the same comments / same question
-- MCQ support (not as good as AMC: Auto multiple Choice https://www.auto-multiple-choice.net/)
-- Batch correction (to score a set of similar answers in a single step)
-- Annotate copies with a stylus during correction
-- Statistics by exam
-
----
-
-# Features 2/2
-
-- Import/Export modules with or without student data
-- Import/Export comments
-- Email to students with their copy in the form of an annotated pdf and/or with a link for consultation on the platform
-- Export results in Excel format (to be sent to school)
-- Support for University identity federations
-- Zen mode
-....
-
-
----
-
-# OpenHub identity card
-
-- [OpenHub](https://openhub.net/p/correctexam)
 
 
 ---
@@ -272,7 +276,7 @@ class: text-center
 
 # Some feedbacks
 
-- 171 issues by twenty users
+- 171 issues by 20 users
   - https://github.com/correctexam/corrigeExamFront/issues/397
 > "I've just finished correcting my first exam with CorrectExam, and I'm pleasantly surprised by how easy it is to use, it's very functional, I couldn't say if I'm saving time, but the feedback to the student seems very important to me, and that's what I prefer. And I can see that features are being added as we go along (text comments with text box!)."  
 Julien Geandrot, 19/11/2023
